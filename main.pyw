@@ -113,14 +113,11 @@ def main() -> None:
     CDW1 = getMeal(getCurrentDate(), "1", "메뉴"); # 조식
     CDW2 = getMeal(getCurrentDate(), "2", "메뉴"); # 중식
     CDW3 = getMeal(getCurrentDate(), "3", "메뉴"); # 석식
-    timeTable = getTimetable(getCurrentDate());
 
     makeImg("base.png", f"{getCurrentDate()} 급식.png", f"조식\n\n{CDW1}\n\n\n중식\n\n{CDW2} \n\n\n석식\n\n{CDW3}", 200, 120, 60); # 급식
-    makeImg(f"{getCurrentDate()} 급식.png", f"{getCurrentDate()} 시간표.png", f"{timeTable}", 3000, 120, 60); # 시간표
-    makeImg(f"{getCurrentDate()} 시간표.png", f"{getCurrentDate()}.png", f"{getCurrentDate()}", 1600, 100, 130); # 날짜
+    makeImg(f"{getCurrentDate()} 급식.png", f"{getCurrentDate()}.png", f"{getCurrentDate()}", 1600, 100, 130); # 날짜
 
     os.remove(f"{getCurrentDate()} 급식.png");
-    os.remove(f"{getCurrentDate()} 시간표.png");
 
     setWallpaper(f"{getCurrentDate()}.png");
 

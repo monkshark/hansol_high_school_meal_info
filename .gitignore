@@ -3,7 +3,9 @@
 
 # 이미지 생성 중간 산출물
 * 급식.png
-* 시간표.png
+
+# JetBrains IDE
+.idea/
 
 # Python
 __pycache__/

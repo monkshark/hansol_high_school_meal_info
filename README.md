@@ -1,4 +1,4 @@
-# 한솔고등학교 급식 바탕화면
+# 오늘의 급식
 
 NEIS 오픈 API에서 오늘 급식(조식·중식·석식)을 받아와 이미지에 그린 뒤, Windows 바탕화면으로 자동 설정하는 스크립트입니다.
 
@@ -8,7 +8,7 @@ NEIS 오픈 API에서 오늘 급식(조식·중식·석식)을 받아와 이미�
 
 1. `datetime`으로 오늘 날짜(`YYYYMMDD`)를 구합니다.
 2. NEIS `mealServiceDietInfo` API를 조식(`1`)·중식(`2`)·석식(`3`)으로 각각 호출합니다.
-3. `base.png` 위에 Pillow로 급식·시간표·날짜를 순서대로 그립니다.
+3. `base.png` 위에 Pillow로 급식과 날짜를 순서대로 그립니다.
 4. 중간 이미지는 삭제하고, 최종 `YYYYMMDD.png`를 `SystemParametersInfoW(20, ...)`로 바탕화면에 적용합니다.
 
 ## 요구 사항
@@ -39,8 +39,8 @@ python main.pyw
 
 ```python
 class niesAPI:
-    ATPT_OFCDC_SC_CODE = "I10";   # 시도교육청 코드 (I10 = 인천광역시교육청)
-    SD_SCHUL_CODE = "9300058";    # 표준학교 코드 (한솔고등학교)
+    ATPT_OFCDC_SC_CODE = "I10";   # 시도교육청 코드
+    SD_SCHUL_CODE = "9300058";    # 표준학교 코드
 ```
 
 코드 값은 NEIS 오픈 API의 `schoolInfo` 엔드포인트에서 학교명으로 조회할 수 있습니다.
@@ -53,4 +53,3 @@ class niesAPI:
 | `base.png` | 급식을 그려 넣을 배경 이미지 |
 | `requirements.txt` | 의존성 목록 |
 | `YYYYMMDD.png` | 실행 결과로 생성되는 바탕화면 이미지 |
-
