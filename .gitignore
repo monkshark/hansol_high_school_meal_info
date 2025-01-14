@@ -12,3 +12,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Java 빌드 산출물
+java/build/
+*.class
